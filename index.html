@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Syllabus Book Finder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 text-center">
+    <div class="max-w-xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
+      <h1 class="text-2xl font-bold mb-4">📚 Syllabus Book Finder</h1>
+
+      <!-- Search Bar -->
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search books..."
+        class="w-full p-2 mb-4 border rounded-lg"
+        oninput="searchBooks()"
+      />
+
+      <!-- Class Selection -->
+      <div id="class-selection">
+        <h2 class="text-xl font-semibold mb-3">Select Class</h2>
+        <div id="classes" class="space-y-2"></div>
+      </div>
+
+      <!-- Subject Selection -->
+      <div id="subject-selection" class="hidden">
+        <h2 class="text-xl font-semibold mb-3">Select Subject</h2>
+        <div id="subjects" class="space-y-2"></div>
+        <button
+          onclick="goBackToClasses()"
+          class="bg-gray-500 text-white px-4 py-2 rounded mt-4"
+        >
+          ⬅ Back
+        </button>
+      </div>
+
+      <!-- Book List -->
+      <div id="book-list" class="hidden">
+        <h2 class="text-xl font-semibold mb-3">
+          Books for <span id="selected-subject"></span>
+        </h2>
+        <ul id="books" class="list-disc list-inside"></ul>
+        <button
+          onclick="goBackToSubjects()"
+          class="bg-gray-500 text-white px-4 py-2 rounded mt-4"
+        >
+          ⬅ Back
+        </button>
+      </div>
+
+      <!-- Favorite Books -->
+      <div id="favorites-section" class="hidden mt-6">
+        <h2 class="text-xl font-semibold mb-3">⭐ Favorite Books</h2>
+        <ul id="favorites-list" class="list-disc list-inside"></ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
